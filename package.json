@@ -12,8 +12,16 @@
     "tømmeplan",
     "waste"
   ],
+  "homepage": "https://github.com/bendiksolheim/homebridge-wasteplan-trv#readme",
+  "bugs": {
+    "url": "https://github.com/bendiksolheim/homebridge-wasteplan-trv/issues"
+  },
   "license": "MIT",
   "author": "Bendik Solheim",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bendiksolheim/homebridge-wasteplan-trv.git"
+  },
   "files": [
     "dist",
     "config.schema.json"

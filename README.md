@@ -113,3 +113,47 @@ npx homebridge -D -I -U ./.homebridge-dev -P .
 
 `.homebridge-dev/config.json` needs a `bridge` section and the platform config
 above.
+
+## Versioning and publishing
+
+The plugin follows [semantic versioning](https://semver.org):
+
+- **Patch** (`0.1.0` → `0.1.1`): bug fixes, nothing changes for users.
+- **Minor** (`0.1.0` → `0.2.0`): new features or config options that are
+  backwards compatible.
+- **Major** (`0.1.0` → `1.0.0`): breaking changes, such as removed or renamed
+  config options, or dropping support for a Homebridge or Node.js version.
+
+While the version is `0.x`, breaking changes bump the minor version instead.
+
+Changing the accessory UUIDs (built from the address ID and fraction ID) is a
+breaking change too: Home sees them as new accessories, so users lose their
+room assignments, names and notification settings.
+
+To release a new version, start from a clean, up-to-date `main`:
+
+```sh
+pnpm version patch   # or minor / major
+git push --follow-tags
+pnpm publish
+```
+
+`pnpm version` bumps the version in `package.json`, commits it and creates a
+`vX.Y.Z` tag. `pnpm publish` refuses to run from any branch other than `main`
+(set in `pnpm-workspace.yaml`) or with uncommitted changes. Before uploading,
+it runs `prepublishOnly`, which checks formatting, lints, typechecks, tests and
+builds. Only `dist/`, `config.schema.json`, `README.md`, `LICENSE` and
+`package.json` are published. Run `pnpm publish --dry-run` to see the
+package contents without uploading.
+
+The first publish requires `npm login` (or `pnpm login`) with an npm account
+that has two-factor authentication enabled.
+
+Prereleases can be published under a separate dist-tag, so Homebridge
+users don't get them by default:
+
+```sh
+pnpm version prerelease --preid beta   # 0.2.0-beta.0
+git push --follow-tags
+pnpm publish --tag beta
+```
