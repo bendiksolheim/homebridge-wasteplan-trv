@@ -1,0 +1,124 @@
+{
+  "errors": ["No ID provided for WasteplanLocation2023 constructor"],
+  "id": "d8f27810-a9e3-4f71-9219-620f7da129cd",
+  "name": "Vegmesterstien 12 A,B, fra Øvre Ferstadveg",
+  "name_short": "Vegmesterstien 12 A,B, fra Øvre Ferstadveg",
+  "type": null,
+  "plan": null,
+  "calendar": [
+    {
+      "dato": "2026-11-04T00:00:00",
+      "frekvensType": 4,
+      "frekvensIntervall": 4,
+      "fraksjon": "Restavfall",
+      "fraksjonId": "9999",
+      "symbolId": 15
+    },
+    {
+      "dato": "2026-11-04T00:00:00",
+      "frekvensType": 4,
+      "frekvensIntervall": 4,
+      "fraksjon": "Matavfall",
+      "fraksjonId": "3000",
+      "symbolId": 9
+    },
+    {
+      "dato": "2026-11-11T00:00:00",
+      "frekvensType": 4,
+      "frekvensIntervall": 6,
+      "fraksjon": "Plastemballasje",
+      "fraksjonId": "3200",
+      "symbolId": 14
+    },
+    {
+      "dato": "2026-11-11T00:00:00",
+      "frekvensType": 4,
+      "frekvensIntervall": 6,
+      "fraksjon": "Glass- og metallemballasje",
+      "fraksjonId": "2612",
+      "symbolId": 4
+    },
+    {
+      "dato": "2026-11-18T00:00:00",
+      "frekvensType": 4,
+      "frekvensIntervall": 4,
+      "fraksjon": "Papp og papir",
+      "fraksjonId": "2400",
+      "symbolId": 12
+    },
+    {
+      "dato": "2026-11-18T00:00:00",
+      "frekvensType": 4,
+      "frekvensIntervall": 4,
+      "fraksjon": "Matavfall",
+      "fraksjonId": "3000",
+      "symbolId": 9
+    },
+    {
+      "dato": "2026-12-02T00:00:00",
+      "frekvensType": 4,
+      "frekvensIntervall": 4,
+      "fraksjon": "Restavfall",
+      "fraksjonId": "9999",
+      "symbolId": 15
+    },
+    {
+      "dato": "2026-12-02T00:00:00",
+      "frekvensType": 4,
+      "frekvensIntervall": 4,
+      "fraksjon": "Matavfall",
+      "fraksjonId": "3000",
+      "symbolId": 9
+    },
+    {
+      "dato": "2026-12-16T00:00:00",
+      "frekvensType": 4,
+      "frekvensIntervall": 4,
+      "fraksjon": "Papp og papir",
+      "fraksjonId": "2400",
+      "symbolId": 12
+    },
+    {
+      "dato": "2026-12-16T00:00:00",
+      "frekvensType": 4,
+      "frekvensIntervall": 4,
+      "fraksjon": "Matavfall",
+      "fraksjonId": "3000",
+      "symbolId": 9
+    },
+    {
+      "dato": "2026-12-23T00:00:00",
+      "frekvensType": 4,
+      "frekvensIntervall": 6,
+      "fraksjon": "Plastemballasje",
+      "fraksjonId": "3200",
+      "symbolId": 14
+    },
+    {
+      "dato": "2026-12-23T00:00:00",
+      "frekvensType": 4,
+      "frekvensIntervall": 6,
+      "fraksjon": "Glass- og metallemballasje",
+      "fraksjonId": "2612",
+      "symbolId": 4
+    },
+    {
+      "dato": "2026-12-30T00:00:00",
+      "frekvensType": 4,
+      "frekvensIntervall": 4,
+      "fraksjon": "Restavfall",
+      "fraksjonId": "9999",
+      "symbolId": 15
+    },
+    {
+      "dato": "2026-12-30T00:00:00",
+      "frekvensType": 4,
+      "frekvensIntervall": 4,
+      "fraksjon": "Matavfall",
+      "fraksjonId": "3000",
+      "symbolId": 9
+    }
+  ],
+  "deviations": null,
+  "plans_by_year": null
+}

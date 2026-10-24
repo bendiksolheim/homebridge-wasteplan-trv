@@ -1,0 +1,84 @@
+{
+  "pluginAlias": "WasteplanTRV",
+  "pluginType": "platform",
+  "singular": true,
+  "headerDisplay": "Exposes your TRV (Trondheim) waste collection plan as one contact sensor per waste fraction. A sensor **opens** on its pickup day between the open and close times. Turn on notifications for the sensors in the Home app to get a reminder.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "default": "Wasteplan TRV",
+        "required": true
+      },
+      "addressId": {
+        "title": "Address ID",
+        "type": "string",
+        "required": true,
+        "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+        "placeholder": "ba3e0f81-d7b9-4131-a3f6-60cbbcd4b20e",
+        "description": "Find your address on https://trv.no/plan/ and copy the UUID from the URL of the plan page."
+      },
+      "openTime": {
+        "title": "Open time",
+        "type": "string",
+        "default": "06:00",
+        "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+        "description": "When sensors open on pickup day (HH:MM, Norwegian time)."
+      },
+      "closeTime": {
+        "title": "Close time",
+        "type": "string",
+        "default": "23:59",
+        "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+        "description": "When sensors close again on pickup day (HH:MM, Norwegian time). Must be later than the open time."
+      },
+      "exclude": {
+        "title": "Exclude fractions",
+        "type": "array",
+        "uniqueItems": true,
+        "description": "Fractions that should not get a sensor. Matavfall is usually picked up together with another fraction, so it is a good candidate.",
+        "items": {
+          "type": "string",
+          "enum": ["9999", "3000", "2400", "3200", "2612"]
+        }
+      }
+    }
+  },
+  "layout": [
+    "name",
+    "addressId",
+    {
+      "type": "flex",
+      "flex-flow": "row wrap",
+      "items": ["openTime", "closeTime"]
+    },
+    {
+      "key": "exclude",
+      "type": "checkboxes",
+      "titleMap": [
+        {
+          "value": "9999",
+          "name": "Restavfall"
+        },
+        {
+          "value": "3000",
+          "name": "Matavfall"
+        },
+        {
+          "value": "2400",
+          "name": "Papp og papir"
+        },
+        {
+          "value": "3200",
+          "name": "Plastemballasje"
+        },
+        {
+          "value": "2612",
+          "name": "Glass- og metallemballasje"
+        }
+      ]
+    }
+  ]
+}

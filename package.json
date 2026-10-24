@@ -1,0 +1,45 @@
+{
+  "name": "homebridge-wasteplan-trv",
+  "displayName": "Homebridge Wasteplan TRV",
+  "version": "0.1.0",
+  "description": "Exposes the TRV (Trondheim) waste collection plan to Apple Home as contact sensors that open on pickup day.",
+  "keywords": [
+    "avfall",
+    "homebridge",
+    "homebridge-plugin",
+    "trondheim",
+    "trv",
+    "tømmeplan",
+    "waste"
+  ],
+  "license": "MIT",
+  "author": "Bendik Solheim",
+  "files": [
+    "dist",
+    "config.schema.json"
+  ],
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "node -e \"fs.rmSync('dist', { recursive: true, force: true })\" && tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "test": "vitest run",
+    "prepublishOnly": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "homebridge": "^2.4.0",
+    "oxfmt": "^0.74.0",
+    "oxlint": "^1.89.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  },
+  "engines": {
+    "homebridge": "^2.0.0",
+    "node": "^22.12.0 || ^24.0.0 || ^26.0.0"
+  },
+  "packageManager": "pnpm@11.20.0"
+}
